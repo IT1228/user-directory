@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link rel="stylesheet" href= "./public/styles.css">
+    </head>
+    <body>
+    <div class = "robots">
+    {{#users}}
+    <div class= "profile">
+    <div class="image">
+    <img src ={{avatar}}></img>
+    </div>
+   <a href= "./users/{{id}}">{{name}}</a>
+    <div class='employment'>
+        {{#job}}{{job}}
+        {{company}}
+        {{/job}}
+        </div>
+    <div class'unemployment'>
+        {{^job}}
+            <div>Available for hire</div>
+        {{/job}}  
+    </div>
+    </div>
+    {{/users}}
+    </div>        
+    </body>
+</html>
