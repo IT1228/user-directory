@@ -1,27 +1,27 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href= "./public/styles.css">
     </head>
     <body>
-    <div class = "robots">
-    {{#users}}
-    <div class= "profile">
-    <div class="image">
-    <img src ={{avatar}}></img>
-    </div>
-   <a href= "./users/{{id}}">{{name}}</a>
-    <div class='employment'>
-        {{#job}}{{job}}
-        {{company}}
+    <img class='img' src={{avatar}}/>
+        <div>{{name}}</div>
+    <h5>Location</h5>
+     {{#address}} {{city}}, {{country}}, {{/address}}
+    <h5>Job</h5>
+        {{#job}}
+        {{job}}, {{company}}
         {{/job}}
-        </div>
-    <div class'unemployment'>
         {{^job}}
-            <div>Available for hire</div>
-        {{/job}}  
-    </div>
-    </div>
-    {{/users}}
-    </div>        
+        {{/job}}
+    <h5>Contact</h5>
+        {{email}} | {{phone}}
+    <h5>Education </h5>
+        {{#university}}{{university}}{{/university}}</div>
+    <h5>Skills</h5>
+    <ul>
+        {{#skills}}
+    <li>{{.}}</li>
+        {{/skills}}
+    </ul>
     </body>
 </html>
